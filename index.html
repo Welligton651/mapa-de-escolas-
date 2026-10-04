@@ -117,10 +117,10 @@
             // Adiciona controlo de zoom no canto superior direito para não sobrepor a UI mobile
             L.control.zoom({ position: 'topright' }).addTo(map);
 
-            // CORREÇÃO AQUI: Remoção do {r} para garantir compatibilidade em qualquer servidor
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png', {
+            // Nova camada de mapa: Esri World Street Map (100% gratuito, sem chave de API e super estável)
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
                 maxZoom: 19,
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contribs &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012'
             }).addTo(map);
 
             // Ícones customizados usando HTML e Tailwind (divIcon)
